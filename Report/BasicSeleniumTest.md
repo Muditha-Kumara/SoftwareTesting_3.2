@@ -14,7 +14,7 @@ This report documents the creation and execution of an automated Selenium test f
 | **Course** | Software Testing (Autumn 2025) |
 | **Group Members** | Muditha Kumara, Chuks Henry |
 | **Date Submitted** | 20/10/2025 |
-| **App Version/Commit** | v1.0 todo-list-app.zip |
+| **App Version/Commit** | 26e6f83 |
 | **Code Repository** | https://github.com/Muditha-Kumara/SoftwareTesting_3.2/tree/main |
 
 ---
@@ -270,5 +270,21 @@ jobs:
 ---
 
 ![alt text](image-2.png)
+
+### 9. Individual Reflections
+
+**Muditha Kumara:**
+I learned a lot about Selenium automation, especially how to handle dynamic elements and debugging with screenshots and logs. Setting up CI/CD with GitHub Actions was a valuable experience, and I now feel more confident integrating automated tests into real-world workflows.
+
+**Chuks Henry:**
+Reviewing and debugging the test scripts helped me understand the importance of robust locators and explicit waits. Collaborating on the CI/CD pipeline and troubleshooting environment issues improved my skills in test reliability and DevOps practices.
+
+---
+
+### 10. Tool Comparison: Selenium vs Cypress vs Playwright
+
+While Selenium is widely used and integrates well with Python, Cypress and Playwright offer modern alternatives. Cypress provides a fast, developer-friendly experience but is limited to JavaScript and browser-based testing. Playwright supports multiple languages and browsers, and its API is more modern and reliable for handling dynamic content. For this assignment, Selenium was chosen for its Python support and compatibility with CI/CD, but exploring Cypress and Playwright in future projects could offer improved speed and ease of use.
+
+---
 
 *End of Report*
