@@ -208,4 +208,67 @@ finally:
 
 ---
 
+### 8. CI/CD Pipeline & Automation
+
+A CI/CD pipeline was implemented using GitHub Actions to automatically run Selenium tests on every push and pull request to the main branch. The pipeline sets up Python, installs dependencies, downloads Chrome and ChromeDriver for testing, and runs the Selenium test in a virtual display environment. The latest CI test passed successfully.
+
+#### [CI/CD Workflow Code](https://github.com/Muditha-Kumara/SoftwareTesting_3.2/blob/main/.github/workflows/selenium-test.yml)
+
+```yaml
+name: Selenium Test CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  selenium-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install selenium
+
+      - name: Download Chrome for Testing
+        run: |
+          wget https://storage.googleapis.com/chrome-for-testing-public/141.0.7390.107/linux64/chrome-linux64.zip
+          unzip -o chrome-linux64.zip
+          mv chrome-linux64/chrome chrome
+
+      - name: Download ChromeDriver for Testing
+        run: |
+          wget https://storage.googleapis.com/chrome-for-testing-public/141.0.7390.107/linux64/chromedriver-linux64.zip
+          unzip -o chromedriver-linux64.zip
+          mv chromedriver-linux64/chromedriver chromedriver
+
+      - name: Add Chrome and ChromeDriver to PATH
+        run: |
+          echo "$(pwd)" >> $GITHUB_PATH
+          export PATH=$(pwd):$PATH
+
+      - name: Run Selenium test
+        env:
+          CHROME_BINARY: ${{ github.workspace }}/chrome
+        run: |
+          export DISPLAY=:99
+          Xvfb :99 -screen 0 1920x1080x24 &
+          sleep 3
+          python basic_selenium_test.py
+```
+
+---
+
+![alt text](image-2.png)
+
 *End of Report*
