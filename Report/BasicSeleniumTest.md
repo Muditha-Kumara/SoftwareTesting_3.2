@@ -13,7 +13,7 @@ This report documents the creation and execution of an automated Selenium test f
 | **Assignment Name** | Basic Selenium Test for Todo List App |
 | **Course** | Software Testing (Autumn 2025) |
 | **Group Members** | Muditha Kumara, Chuks Henry |
-| **Date Submitted** | 15/10/2025 |
+| **Date Submitted** | 20/10/2025 |
 | **App Version/Commit** | v1.0 todo-list-app.zip |
 | **Code Repository** | https://github.com/Muditha-Kumara/SoftwareTesting_3.2/tree/main |
 
